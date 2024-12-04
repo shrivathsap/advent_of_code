@@ -76,7 +76,3 @@ for x in range(height):
         else:
             line+="."
     print(line)
-    
-
-#print(lines)
-
