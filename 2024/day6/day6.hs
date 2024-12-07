@@ -32,13 +32,12 @@ possible grid start_pos start_dir x y =
         let
             num_r = length grid
             num_c = length (grid!!0)
-            -- obstacles_visited = Set.empty
             (end_pos, end_dir, visited) = until repeat_or_outside add_next (start_pos, start_dir, Set.empty)
                 where
                     repeat_or_outside (position, direction, list) =
                          ([position, direction] `Set.member` list)||(position!!0)<0||(position!!0)>=num_r||(position!!1)<0||(position!!1)>=num_c
                     add_next (position, direction, list) = 
-                        let [a, b] = [(position!!0)+(direction!!0), (position!!1)+(direction!!1)]--(add_vects position direction)
+                        let [a, b] = [(position!!0)+(direction!!0), (position!!1)+(direction!!1)]
                         in
                             if ((a<0)||(a>=num_r)||(b<0)||(b>=num_c)) then ([a, b], direction, list)
                             else
