@@ -1,0 +1,5 @@
+Day 8 - Resonant Collinearity
+
+Very straightforward. There's a grid with a bunch of dots, letters and numbers. The non-dot character represents antennae and we are supposed to find points in the grid collinear with antennae of the same letters. In part 1, there are two points on either side of two antennas and in part 2 we need to look at all such points.
+
+Wrote a function that takes in the grid and a letter and returns all positions in the grid where that letter appears. Wrote a second function that loops through pairs of positions with the same letter and generates collinear points. In Python, I made use of dictionaries, in Haskell I phrased the dictionary as a function (currying-uncurrying). In Python, I used `set` to get rid of duplicates, in Haskell `nub` from `Data.List` was more straightforward.
