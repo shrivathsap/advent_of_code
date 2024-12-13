@@ -14,7 +14,11 @@ Prize: X=12748, Y=12176
 ```
 
 I like the way I handled parsing of the input files in Haskell:
-```machines = [take 3 (drop (4*i) all)|i<-[0..(length all - 1)`div`4]]```
+```
+machines = [take 3 (drop (4*i) all)|i<-[0..(length all - 1)`div`4]]
+```
 to group things into threes and
-```f string = (map (read::String->Int))(getAllTextMatches(string =~ "[0-9]+")::[String])```
+```
+f string = (map (read::String->Int))(getAllTextMatches(string =~ "[0-9]+")::[String])
+```
 to obtain numbers and convert them to integers.
