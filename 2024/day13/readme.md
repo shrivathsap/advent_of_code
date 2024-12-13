@@ -2,7 +2,7 @@ Day 13 - Claw Contraption
 
 This was easy, just a linear alebra problem. Moreover, all of them were invertible matrices. I have a case to check whether a matrix is not invertible, but at the moment it does nothing.
 
-The input consists of lines
+The input consists of lines of the form
 ```
 Button A: X+94, Y+34
 Button B: X+22, Y+67
