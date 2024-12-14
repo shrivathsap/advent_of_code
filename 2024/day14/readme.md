@@ -1,0 +1,3 @@
+Day 14 - Restroom Redoubt
+
+Eh. The first part was again an easy calculation together with splitting a list into 4 parts. The second part was unclear for me. After looking around, I saw that a Christmas tree would appear when the robot positions didn't overlap. My input gave two such times and one of them was the solution. Just to be sure, in Python, I wrote a couple of lines to draw the output on the terminal so I could verify it. Looking around, I've seen a lot of different approaches to the second part and the one I like the most is to look for a time when the positions have least variance/entropy. That's pretty cool.
