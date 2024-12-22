@@ -1,0 +1,11 @@
+Day 22 - Monkey Market
+
+This was an easy one compared to yesterday. The first part is to generate 2000 numbers for each input number following a procedure, and then take the sum. In Python, I used bit strings and bit operations like in [Day 17](https://github.com/shrivathsap/advent_of_code/tree/main/2024/day17) to handle the operation. In Haskell, I was lazy and just did plain arithmetic which is definitely not good for speed. The first part is relatively quick, 4 seconds with my Python code, 12 with Haskell.
+
+For the second part, we first have to look at the last digits, so we get something like `[1,2,0,3,4,...]`, then we need to look at the changes, so `[_,1,-2,3,1,...]`. Then we need to take four of these changes at a time, so `(1,-2,3,1),(-2,3,1,_),...`.
+
+From the first part we have 2000 sequences of numbers. For each difference vector as above, look at the first appears of that difference sequence in the list, take the 4th number and add it to the total. The question is: which difference vector gives the largest total and what's the largest total.
+
+It took me a while to figure out an efficient way to handle this, but it wasn't as bad as yesterday. In Python, I made a dictionary to hold all the difference vectors. Then I loop through the number list, add difference vectors and the total keeping in mind to only have the first occurence of the difference vector for each number.
+
+Then I pick the one with the largest score. The answer was suspiciously low (in the 2000 range) which was very surprising, but it turned out to be correct. My Haskell code does pretty much the same thing, but takes well over 10 minutes to run (compared to a mere 38 seconds with the Python code). I'm sure it compiles and gives the correct answer, but I don't feel like optimizing it anymore. The issue is definitely in the way I remove duplicates, i.e., making sure I only look at the first appearance of a difference vector. I know it gives the correct answer for the test example, I am not going to optimize it, may be in the future if I ever look at this again, but I'm done for the day.
