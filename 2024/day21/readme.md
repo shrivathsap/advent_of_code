@@ -57,3 +57,5 @@ where `cur` is the current position, `nex` is the next position. In Python, this
 to my `valid_moves` function and finally it was done. Well, not yet. Because if you remember, I was randomly changing how many layers there were - first three bruteforced, then 21 via dictionaries and such. That was handled with something like `layers-4` and I forgot to remove that `4`, even though I had removed the bruteforcing. This was really frustrating because I couldn't figure out what I was still miscounting!
 
 Very fun, but I spent way too much time on this.
+
+Coding it in Haskell the next day was relatively straightforward, and somewhat fun because I didn't run into any walls.
