@@ -1,6 +1,6 @@
 Day 23 - LAN Party
 
-Well, this wasn't too hard, but I don't like my solution that much. There's a graph whose nodes have two letter names, such as `ad, tq` etc and the first part asks for all 3-cycles where at least one node starts with `t`. The second part asks for nodes in the largest complete subgraph. A complete subgraph is a subgraph where every vertex is connected to every other vertex.
+Well, this wasn't too hard, but I don't like my solution that much because I use external libraries. There's a graph whose nodes have two letter names, such as `ad, tq` etc and the first part asks for all 3-cycles where at least one node starts with `t`. The second part asks for nodes in the largest complete subgraph. A complete subgraph is a subgraph where every vertex is connected to every other vertex.
 
 At first, I assumed part two would ask for all cyles or something like that. I thought it would be best to first obtain a spanning tree. So, that's what I did. I parsed the input into a list of edges `[(u, v), (x, y),...]` and then I converted it into a dictionary `graph` which looked like `{vertex:[neighbours]}`. This was easy.
 
