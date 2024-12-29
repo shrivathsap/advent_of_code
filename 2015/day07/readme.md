@@ -1,0 +1,7 @@
+Day 07 - Some Assembly Required
+
+This was annoying to parse, but easy to solve. The input is many lines of statements like `cx AND ar -> fg` (which means that take the values in `cx, ar` and `AND` them and put the value on `fg`), but there were different formats involved: `_ RSHIFT n -> _, _ AND _ -> _, NOT _->_, _->_` where the underscores could either be raw numbers or variables to be computed.
+
+So, there's parsing whether the input is a raw number, direct transfer from a variable, a bitwise complement on a variable, bit shifting a variable by a raw number (either left or right) and performing a bitwise `AND` or `OR` on two variables or a variable and a number. That's a lot of cases!
+
+My code simply creates an instruction dictionary (which would contain something like `fg: (cx, AND, ar, ->)`; I didn't bother to remove the `->` part) and a data dictionary (which stores the computed values, say `cx:4, ar:6` and so on). Then there's a single `update` function to compute whatever values can be computed and remove them from the instruction dictionary and update the data dictionary. The input has two raw numbers at the start and we need to compute the final value of the variable `a`. The second part asks to put this value as one of the starting numbers and then compute the value of `a`. I manually changed the value in the input file and did part two a second time. Easy solution, but annoying to implement.
