@@ -39,5 +39,7 @@ main = do
         g x = fst $ head (dropWhile (\(x, y)->y/=[]) (iterate (update_path_max distances) ([x], [y|y<-cities, y/=x])))
         paths = [(f x, cost_of (f x) distances)|x<-cities]
         max_paths = [(g x, cost_of (g x) distances)|x<-cities]
+        all_costs = [cost_of x distances|x<-(permutations cities)]
     print(minimum [snd x|x<-paths])
     print(maximum [snd x|x<-max_paths])
+    print(minimum all_costs, maximum all_costs)--this is the correct way to do it, greedy algorithm shouldn't work (see readme.md)
