@@ -9,7 +9,7 @@ map (read::String->Int) (getAllTextMatches (long_line=~"[0-9]+|-[0-9]+")::[Strin
 ```
 Here `long_line` is my input wihch happens to be a really long line because that's what the input `.txt` file is. Then I find all matches with `[0-9]+|-[0-9]+`. This regex code looks for substrings that use multiple (`+`) characters from `0-9`, or (`|`) substrings that are of the form `-[0-9]+`. Then I convert the type from `String` to `Int` and then sum it up.
 
-The second part asks us to ignore all dictionaries where at least one key has `"red"` as its value. This was hard without JSON, but I managed to do it with a little bit of help for debugging.
+The second part asks us to ignore all dictionaries where at least one key has `"red"` as its value. This was hard without JSON, but I managed to do it with a little bit of help (Python with the json library) for debugging.
 
 At first I thought of the regext code `{[^}]+}`. This looks for strings starting with `{`, followed by many characters that are not `}` (the `^` means "not") and then followed by `}`, i.e., it captures from an open brace till the first closing brace. But this obviously isn't what I want.
 
