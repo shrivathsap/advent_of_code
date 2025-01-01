@@ -1,0 +1,3 @@
+Day 17 - No Such Thing as Too Much
+
+Another very simple one. There are a bunch of containers with different volumes. In the first part we need to find those subsets that sum to a volume of 150. In the second part we want the subsets that still sum to a volume of 150, but we want to use as few containers as possible. I wrote a `subsets` function that gives the power set of a set, and then a simple list comprehension does the job.
