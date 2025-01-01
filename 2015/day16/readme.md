@@ -1,0 +1,2 @@
+Day 16 - Aunt Sue
+Goal: find the aunt Sue that has a specific number of dogs/cats etc. I used Ctrl+F. For the sake of completeness, I wrote some Haskell code. It works perfectly for part one, but for part two I reduce to 27 options which I can then manually look through. Not efficient, but eh.
