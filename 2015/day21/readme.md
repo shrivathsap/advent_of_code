@@ -1,0 +1,3 @@
+Day 21 - RPG Simulator 20XX
+
+You must buy one weapon, at most one armour, and at most 2 rings and have to defeat a boss. The input is small enough that brute force is fast enough (there are only 1100) combinations to go through. You go first, then the boss attacks and so on, the `can_win` funciton is recursive. Parsing the stats was the hardest part, the input itself was just three numbers I entered by hand.
