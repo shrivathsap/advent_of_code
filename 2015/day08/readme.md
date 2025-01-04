@@ -4,4 +4,4 @@ This was confusing. The input is a bunch of strings of the form `"\x27", "asd\x4
 
 The issue is that when Haskell (or any programming language) reads the lines form a `.txt` file, it adds its own escape characters to escape the escape characters, and that makes everything very confusing (at least to me).
 
-I wrote two functions `parsed` and `unparsed` that manipulate these strings (seen as an array of `Char`), and then I take the lenght. Except, there's going to be an offset of `2` because of the surrounding quote marks. When I parse them, I will be including two extra backslashes and when I unparse them I will be not including two extra quote marks.
+I wrote two functions `parsed` and `unparsed` that manipulate these strings (seen as an array of `Char`), and then I take the length. Except, there's going to be an offset of `2` because of the surrounding quote marks. When I parse them, I will be including two extra backslashes and when I unparse them I will be not including two extra quote marks.
