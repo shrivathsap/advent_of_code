@@ -1,0 +1,7 @@
+Day 24 - It Hangs in the Balance
+
+I'm not too happy with my code because it wouldn't work always. We are given a list of numbers and we want to split it into 3 (4 for part 2) groups of equal sums and of these, look for the ones where the first group has the least number of terms, and among those look at the least product of numbers in the first group. This is the [subset sum problem](https://en.wikipedia.org/wiki/Subset_sum_problem), an [NP-complete](https://en.wikipedia.org/wiki/NP-completeness) problem and the most naive algorithm has `O(2^n*n)` complexity.
+
+My code simply finds all the subsets that sum to a number, and then picks out the smallest. This shouldn't work because even if one subset sums to the given target number, we might not be able to split the rest of the numbers into two halves: `1,5,9` has a total sum of `15` and we might get `5` in the first group, but we cannot split the `1,9` into two groups of equal sum.
+
+I tried writing a function to check recursively whether a given number is a sum of some subset, but it was still too time consuming. For the second part it would be even harder because I'd first need to find two groups that sum to a particular number and then check whether the remaining can be split validly. I don't know how to optimize this.
