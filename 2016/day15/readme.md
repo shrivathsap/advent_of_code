@@ -1,0 +1,3 @@
+Day 15 - Timing is Everything 
+
+This was too simple for a day 15 problem. An elegant solution would be to use the [Chinese Remainder Theorem](https://en.wikipedia.org/wiki/Chinese_remainder_theorem), but my solution is far less elegant. Just to see if it would give something in a reasonable amount of time, I simply used a naive approach and it worked - so I'm not going to bother with CRT and just stick with this. I manually entered everything and there's nothing to this problem. Because I shouldn't distribute my input, the code has some gibberish input for now.
