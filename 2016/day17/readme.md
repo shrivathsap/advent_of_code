@@ -1,0 +1,7 @@
+Day 17 - Two Steps Forward
+
+Another problem with the MD5 hash. I used Python for this. We have a 4x4 grid and want to go from the `(0, 0)` corner to the `(3, 3)` corner. Say our input is `input`, and we have taken a path `p` to get to some coordinate `(x, y)`. To find which doors are open from this coordinate, we need to look at the first four characters of the MD5 has of `input+p`. If the first character is from `b` to `f`, then the `U` direction is open, the second, third and fourth characters control the `D, L, R` directions respectively. So, returning to the same coordinate along a different path will open different doors.
+
+The first part is to find the shortest path to the destination, and the second part is to find the longest. That a longest path exists is interesting and I'm curious about how the inputs were generated. My best guess is to generate all the hashes and discarding those that had paths longer than a 1000 steps or something like that.
+
+I wrote a `generate` function that generates the next generation in the tree and used a breadth first search for part one. For part two, I keep growing the tree until nothing new is added. I thought the longest path would end at the destination square, but it's possible that there's a longer path that walks into some room where all the doors are closed, so some filtering needs to be done before taking the `max` of path lengths. Neat problem.
