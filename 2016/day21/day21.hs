@@ -1,6 +1,5 @@
 import System.IO
 import qualified Data.Sequence as Seq
-import qualified Data.Sequence as Seq
 
 my_move :: Seq.Seq a -> Int -> Int -> Seq.Seq a
 my_move seq a b
@@ -116,5 +115,7 @@ main = do
         pwd2 = Seq.fromList "fbgdceah"
         scrambled = foldl scramble pwd insts
         unscrambled = foldl unscramble pwd2 (reverse insts)
-    print(map (\n -> foldl scramble pwd (take n (insts))) [0..100])
-    print(map (\n -> foldl unscramble pwd2 (take n (reverse insts))) [0..100])
+    -- print(map (\n -> foldl scramble pwd (take n (insts))) [0..100])
+    -- print(map (\n -> foldl unscramble pwd2 (take n (reverse insts))) [0..100])
+    print(scrambled)
+    print(unscrambled)
