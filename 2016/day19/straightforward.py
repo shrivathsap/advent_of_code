@@ -5,6 +5,5 @@ def part2(num):
         x = x[1:]+x[:1]
     return x[0]
 
-
 for num in range(2, 100):
     print(num, part2(num))
