@@ -15,12 +15,6 @@ ltn x
     |x=="d" = 3
     |otherwise = -1
 
--- args "inc" = 1
--- args "dec" = 1
--- args "tgl" = 1
--- args "jnz" = 2
--- args "cpy" = 2
-
 cpy :: String -> String -> Comp -> Comp
 cpy x y c
     |not(isLetter (y!!0)) = Comp (prog c) ((inst_ptr c) + 1) (regs c) --move on
@@ -32,9 +26,6 @@ inc x c = Comp (prog c) ((inst_ptr c) + 1) ((take (ltn x) (regs c)) ++[(regs c)!
 
 dec :: String -> Comp -> Comp
 dec x c = Comp (prog c) ((inst_ptr c) + 1) ((take (ltn x) (regs c)) ++[(regs c)!!(ltn x)-1]++(drop (ltn x+1) (regs c)))
-
--- sqr :: String -> Comp -> Comp
--- sqr x c = Comp (prog c) ((inst_ptr c) + 1) ((take (ltn x) (regs c)) ++[((regs c)!!(ltn x)-1)^2]++(drop (ltn x+1) (regs c)))
 
 jnz :: String -> String -> Comp -> Comp
 jnz x y c --this time y could be a letter
@@ -81,7 +72,6 @@ tgl x c =
 
 process :: Comp -> Comp
 process c
-    -- |(inst_ptr c == 4) = Comp (prog c) 11 [(regs c!!1)*(regs c!!2), regs c!!1, 0, 0]
     |(inst_ptr c >= (length (prog c))) = c
     |inst == "cpy" = cpy (parts!!1) (parts!!2) c
     |inst == "inc" = inc (parts!!1) c
