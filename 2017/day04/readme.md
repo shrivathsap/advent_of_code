@@ -1,0 +1,3 @@
+Day 04 - High-Entropy Passphrases
+
+This was very simple. We are given a list of passphrases and are tasked with finding the number of valid ones. In the first task, a passphrase is valid if there are no repeated words, in the second task there should be no repetitions up to anagrams. All words are made of lowercase letters. With the built-in `nub` and `sort` functions in `Data.List`, both of these checks are one line. Note that two words are anagrams of each other if and only if they are equal when sorted.
