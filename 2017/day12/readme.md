@@ -10,7 +10,7 @@ This was surprisingly simple for a Day 12 problem. Basically, our input is a gra
 5 <-> 6
 6 <-> 4, 5
 ```
-where the left side is a vertex, and right side is all its neighbours. Part one is to find how many vertices are in the component of the vertex `0`, and part two is to find the number of components of this graph.
+where the left side is a vertex, and right side is all its neighbours. Part one is to find how many vertices are in the [component](https://en.wikipedia.org/wiki/Component_(graph_theory)) of the vertex `0`, and part two is to find the number of components of this graph.
 
 First I parsed the input into a `Data.Map` object so that I can look up the neighbours of a vertex easily. This was straightforward: except for the comma, I can get things by calling `words`, I remove the comma by the `comma` function, and then I take the head of the list to get the vertex and `drop 2` to get the neighbours - the input is given in a convenient form. I used `(read::String->Int)` to convert things into integers, but now that I think about it, that wasn't really necessary.
 
