@@ -51,8 +51,9 @@ knot_hash string =
         g nums --nums is expected to be of length 256
             |length nums==16 = [f nums]
             |otherwise = [f $ take 16 nums]++(g $ drop 16 nums)
+        padded_hex num = if (length(to_hex num)==1) then "0"++(to_hex num) else to_hex num
     in
-        concat $ map to_hex $ g permutation
+        concat $ map padded_hex $ g permutation
 
 main = do
     handle <- openFile "day10.txt" ReadMode
