@@ -1,0 +1,7 @@
+Day 15 - Dueling Generators
+
+Here is the setup: there are two numbers `inputA, inputB` and two other numbers `mulA, mulB`, a third number `num`. There are two routines: `(inputA*mulA) mod num, (inputB*mulB) mod num`. We have to replace `inputA, inputB` by these two numbers, check if their last 16 bits are the same, and then repeat. For part one, we have to go for 40 million cycles and count how many times the last 16 bits agree. For part two, we have to do the same for 5 million cycles, except we first have to build a list of 5 million numbers where all of `A`s numbers are multiples of 4 and `B`s numbers are multiples of 8. In the current code, I have initialized my inputs to `0` instead of my actual input.
+
+At first, I wrote the present `part_one` function in Haskell and tried to run it with `ghci`, i.e., without compiling it. This never completed. Then I wrote a quick Python program and the present one runs both parts in about 50 seconds. I could make it faster using libraries like `numpy` which are built to handle such big computations.
+
+Then I went back to Haskell and ran it after compiling. It ran the first part in about 8 seconds, so I figured it was worthwhile to continue. For part two, the code is pretty much the same, I use `iterate` followed by `filter` to get the correct multiples, then use `take 5000000` to take 5 million of those. I used `zip` to pair up the outputs of the two generators, and then it's the same as part one. After compilation, both parts run in about 16 seconds, which is fast enough. Well, now I know.
