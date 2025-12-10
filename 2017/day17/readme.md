@@ -1,0 +1,7 @@
+Day 17 - Spinlock
+
+This was quite simple. We start with the list `[0]` and at position `0`. There is a shift (our input), and at every iteration, we move the position by `shift` (modulo the length) and insert a number at the next position in the list. The numbers to insert are `1,2,...` i.e., the current step in our iteration, or equivalently the length of the list before insertion.
+
+For part one, we run this 2017 times and find the number just after 2017. I wrote a function `update` that takes the current list, the next number to insert and the current position and updates each of those variables. `iterate` 2017 times to get the position of 2017 in the final list, then check the next number.
+
+For part two, we should run the iteration 50 million times! But the good news is that we only need to know the number that comes after `0`. The bulk of the time/memory in part one is in creating and keeping track of the list. Here, we don't care about the list, we only need to know the times when the position hits `0` because those are the only times when we insert something after `0`. In other words, we only need to keep track of the position, and every time we hit `0` we will be inserting the current length after `0`. This is done in the `part_two` function. Once you realize that you only need to track the position the problem becomes really simple. Still, it takes a while to run.
