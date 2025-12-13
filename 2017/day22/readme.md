@@ -1,0 +1,9 @@
+Day 22 - Sporifica Virus
+
+We have another automaton, this time there is a virus moving in a 2D grid. At each cell it visits, it changes directions based on the state of the cell, then changes the state of the cell and then moves one step ahead.
+
+In the first part, each cell is either clean or infected. In the second part, there are 4 states: clean, weakened, infected, flagged and we cycle between them in order. Every time a cell is infected, we increase a counter and the task is to find the value of the counter after some generations.
+
+For the first part, I kept track of the infected cells in a list and we need to evolve the state for 10000 generations. This was easy.
+
+For the second part, it's obviously better to have a `Data.Map` object that assigns each cell to one of four states and then modify it. The function `update2` is pretty simple. However, we need to run the machine for 10000000 generations and this runs into a stack overflow problem. I translated the same code into Python and it runs reasonably well. I was careful enough to clear out the cleaned cells, so at any point I had to keep track of the states of at most 75000 cells, which isn't a lot. The issue is with Haskell's laziness. I learnt that I can put a `!` before a variable to make certain evaluations strict, yet that didn't help. I suspect the problem is with `Data.Map` doing insertions etc in a lazy manner. I don't know how to make everything strict, so that's where it is at. The current code is still able to process a million generations. I thought it could be with `iterate` making a list of size 10000000, so I wrote a simple `evolve` function but that didn't solve the issue either. So it goes.
